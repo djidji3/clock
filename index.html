@@ -1,71 +1,76 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
     html {
         font-size: 16px;
     }
-    
+
     body {
         font-family: 'Fjalla One', sans-serif;
         margin: 0;
     }
-    
+
     * {
         box-sizing: border-box;
     }
-    
+
     .flexbox-container {
         display: flex;
         flex-wrap: nowrap;
         height: 100%;
+        width: 100%;
         justify-content: space-around;
         align-items: center;
         background-color: gray;
         flex-direction: row;
-        min-height: 367px;
+
         align-content: center;
     }
-    
+
     .flexbox-item {
-        background-color: black;
+        background-color: rgb(139, 87, 87);
         color: rgb(51, 121, 179);
-        font-size: 1rem;
-        width: 500px;
+        font-size: 5rem;
+        width: 600px;
         padding: 30px;
         border: 1px solid black;
-        height: 150px;
-        flex-basis: 120px;
+        height: 250px;
+
         flex-grow: 1;
         min-height: 30px;
         flex-grow: 0;
         align-self: center;
     }
-    
+
     p {
         color: aqua;
     }
 </style>
 </head>
 
-<body>
+<body >
     <div class="flexbox-container">
         <div class="flexbox-item">
-            <p></p>
+
         </div>
     </div>
 
     <script>
         'use strict';
-        let display = document.querySelector('.flexbox-item>p').innerText;
+     
+     var timeDisplay = setInterval(timeDisplay, 1000);
+     
+     function timeDisplay(){
+         let display = document.querySelector('.flexbox-item');
         let datum = new Date();
         let ora = datum.getHours();
         let perc = datum.getMinutes();
         let mp = datum.getSeconds();
+        display.innerText = `${ora}:${perc}:${mp}`;
+     };
 
-        function setDisplay() {
-            display = `${ora}:${perc}:${mp}`;
-            console.log(`${ora}:${perc}:${mp}`);
-        };
-        setDisplay();
+   
+
     </script>
 </body>
 
