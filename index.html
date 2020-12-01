@@ -34,7 +34,7 @@
         background-color: rgb(8, 8, 8);
         color: rgb(53, 32, 173);
         font-size: 5rem;
-        width: 600px;
+        width: 650px;
         padding: 30px;
         border: 1px solid black;
         height: 200px;
@@ -67,8 +67,17 @@
             let display = document.querySelector('.flexbox-item');
             let datum = new Date();
             let ora = datum.getHours();
+            if (ora < 10) {
+                ora = `0${ora}`;
+            }
             let perc = datum.getMinutes();
+            if (perc < 10) {
+                perc = `0${perc}`;
+            }
             let mp = datum.getSeconds();
+            if (mp < 10) {
+                mp = `0${mp}`;
+            }
             display.innerText = `${ora}:${perc}:${mp}`;
         };
         const datumObjectum = new Date();
